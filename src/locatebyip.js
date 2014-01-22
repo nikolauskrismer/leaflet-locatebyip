@@ -14,8 +14,8 @@ L.IpProvider.FreeGeoIp = {
 		return {
 			coords: {
 				accuracy: 10000,
-				latitude: data.latitude,
-				longitude: data.longitude
+				latitude: parseFloat(data.latitude),
+				longitude: parseFloat(data.longitude)
 			},
 			timestamp: new Date().getTime()
 		};
@@ -33,8 +33,8 @@ L.IpProvider.GeoPlugin = {
 			coords: {
 				accuracy: 10000,
 				/* jshint ignore:start */
-				latitude: data.geoplugin_latitude,
-				longitude: data.geoplugin_longitude
+				latitude: parseFloat(data.geoplugin_latitude),
+				longitude: parseFloat(data.geoplugin_longitude)
 				/* jshint ignore:end */
 			},
 			timestamp: new Date().getTime()
@@ -49,8 +49,8 @@ L.IpProvider.Wikimedia = {
 			result = {
 				coords: {
 					accuracy: 10000,
-					latitude: data.lat,
-					longitude: data.lon
+					latitude: parseFloat(data.lat),
+					longitude: parseFloat(data.lon)
 				},
 				timestamp: new Date().getTime()
 			};
